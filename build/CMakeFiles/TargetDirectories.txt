@@ -1,5 +1,0 @@
-/home/lukas/Code/Projects/breakout/build/CMakeFiles/breakout.dir
-/home/lukas/Code/Projects/breakout/build/CMakeFiles/platform.dir
-/home/lukas/Code/Projects/breakout/build/CMakeFiles/ball.dir
-/home/lukas/Code/Projects/breakout/build/CMakeFiles/edit_cache.dir
-/home/lukas/Code/Projects/breakout/build/CMakeFiles/rebuild_cache.dir
