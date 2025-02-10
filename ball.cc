@@ -1,13 +1,15 @@
 #include "ball.h"
 #include "breakout.h"
+#include "platform.h"
 
 
 
-Ball::Ball(float size, Color color)
-: m_position{s_width / 2.0f, s_height / 2.0f}
-, m_velocity{5.0f, 15.0f}
-, m_size(size)
-, m_color(color)
+Ball::Ball(float size, Color color, Platform &plat)
+    : m_position{s_width / 2.0f, s_height / 2.0f}
+    , m_velocity{5.0f, 15.0f}
+    , m_size(size)
+    , m_color(color)
+    , m_plat(plat)
 {}
 
 void Ball::update() {
@@ -18,6 +20,10 @@ void Ball::update() {
 
     if (m_position.y - m_size <= 0 || m_position.y + m_size >= s_height)
         m_velocity.y *= -1;
+
+    if (CheckCollisionCircleRec(m_position, m_size, m_plat.get_area()))
+        m_velocity.y *= -1;
+
 }
 
 void Ball::draw() {

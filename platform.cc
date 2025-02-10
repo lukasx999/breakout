@@ -19,6 +19,15 @@ void Platform::draw() {
     DrawRectangleV(m_position, m_size, m_color);
 }
 
+Rectangle Platform::get_area() {
+    return Rectangle {
+        m_position.x,
+        m_position.y,
+        m_size.x,
+        m_size.y
+    };
+}
+
 void Platform::move_left() {
     m_position.x -= m_move_step;
     if (m_position.x <= 0)

@@ -16,6 +16,7 @@ public:
         Color color
     );
     virtual void draw();
+    Rectangle get_area();
     void move_left();
     void move_right();
 };

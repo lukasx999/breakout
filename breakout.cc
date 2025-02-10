@@ -9,10 +9,10 @@
 int main() {
 
     Platform platform(300, 50, 100, 10, WHITE);
-    Ball ball(50, RED);
+    Ball ball(50, RED, platform);
 
     SetTargetFPS(60);
-    InitWindow(WIDTH, HEIGHT, "Breakout");
+    InitWindow(IDrawable::s_width, IDrawable::s_height, "Breakout");
 
     while (!WindowShouldClose()) {
         BeginDrawing();
@@ -22,10 +22,10 @@ int main() {
             platform.draw();
             ball.draw();
 
-            if (IsKeyDown(KEY_H))
+            if (IsKeyDown(KEY_H) || IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A))
                 platform.move_left();
 
-            if (IsKeyDown(KEY_L))
+            if (IsKeyDown(KEY_L) || IsKeyDown(KEY_RIGHT) || IsKeyDown(KEY_D))
                 platform.move_right();
 
 
